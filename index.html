@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{description | translate }}">
+  <meta name="keywords" content ="{{keywords | translate }}">
+  
+  <title translate="{{title}}"></title>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/css/style.min.css">
+
+  
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY" crossorigin="anonymous"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+    <![endif]-->
+  
+  <base href="/">
+</head>
+<div class="header-contact"></div>
+<div class="navbar-wrap"></div>
+
+<body id="page-top" class="index">
+
+  <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix">
+    <div class="container">
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" onclick="setToggle();">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+        <a class="navbar-brand page-scroll" href="/">Chernobyl Now</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right" ng-controller="menu">
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li ng-repeat="part in mainMenu">
+            <a class="page-scroll" href="{{part.link}}" translate="{{part.title}}"></a>
+          </li>
+          <li ng-click="changeLanguage('en');">
+            <img src="https://lipis.github.io/flag-icon-css/flags/4x3/gb.svg" class="lang-icon" ng-style="enLangIcone">
+          </li>
+          <li ng-click="changeLanguage('ru');">
+            <img src="https://lipis.github.io/flag-icon-css/flags/4x3/ru.svg" class="lang-icon" ng-style="ruLangIcone">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div id="page-loader" class="loaded">
+    <div class="cssload-container">
+      <div class="cssload-speeding-wheel"></div>
+    </div>
+  </div>
+
+  <div class="ng-view" autoscroll="true"></div>
+
+  <footer class="footer-corporate bg-gray-darker">
+    <div class="shell">
+      <div class="footer-corporate__inner">
+        <p class="rights"><span>ChernobylNow</span><span>&nbsp;</span><span id="copyright-year">2017</span>
+        </p>
+        <ul class="list-inline-xxs">
+          <li>
+            <a class="icon icon-xxs icon-gray-darker fa fa-facebook" href="#"></a>
+          </li>
+          <li>
+            <a class="icon icon-xxs icon-gray-darker fa fa-twitter" href="#"></a>
+          </li>
+          <li>
+            <a class="icon icon-xxs icon-gray-darker fa fa-google-plus" href="#"></a>
+          </li>
+          <li>
+            <a class="icon icon-xxs icon-gray-darker fa fa-vimeo" href="#"></a>
+          </li>
+          <li>
+            <a class="icon icon-xxs icon-gray-darker fa fa-youtube" href="#"></a>
+          </li>
+          <li>
+            <a class="icon icon-xxs icon-gray-darker fa fa-pinterest" href="#"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/jquery-ui/jquery-ui.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="vendor/angular-route/angular-route.min.js"></script>
+  <script src="vendor/angular-cookies/angular-cookies.min.js"></script>
+  <script src="vendor/angular-translate/angular-translate.min.js"></script>
+
+  <script src="app.min.js"></script>
+  <script src="js/script.min.js"></script>
+
+</html>

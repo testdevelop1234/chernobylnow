@@ -1,0 +1,93 @@
+<header>
+  <div class="container">
+    <div class="intro-text-page">
+      <a href="/order" class="page-scroll btn btn-xl" translate="HEADER_BUTTON"></a>
+    </div>
+  </div>
+</header>
+
+<section class="section-md bg-gray-lighter">
+  <div class="cell-xs-12 text-center">
+    <h4 class="heading-decorated" translate="PRICING_HEADING"></h4>
+    <span translate="PRICING_DESCRIPTION"></span>
+    <br>
+    <br>
+    <br>
+  </div>
+  <div class="cell-xs-12">
+    <div class="shell">
+      <div class="range range-sm-center range-30 range-sm-50">
+        <div class="cell-sm-11 cell-md-10 cell-lg-6">
+          <h6 translate="PRICING_INDIVIDUAL"></h6>
+          <br>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th></th>
+                <th>{{ 'PRICING_FOREIGN' | translate }}</th>
+                <th>{{ 'PRICING_UKRAINIAN' | translate }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="price in pricing">
+                <th scope="row">{{ price.quanity}} {{ 'PRICING_PERSON' | translate }}</th>
+                <td>{{ price.foreign }}{{ 'PRICING_PERSON' | translate }}</td>
+                <td>{{ price.ukrainian }}{{ 'PRICING_PERSON' | translate }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cell-sm-11 cell-md-10 cell-lg-6">
+          <h6 translate="PRICING_GROUP"></h6>
+          <br>
+          <table class="table table-bordered">
+            <tbody>
+              <tr ng-repeat="priceGroup in pricingGroup">
+                <th scope="row">{{ priceGroup.citizenship | translate }}</th>
+                <td>{{ priceGroup.price }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <section class="section-sm">
+        <h6 translate="PRICING_CALENDAROFTOURS_HEADING"></h6>
+        <ul class="text-center">{{ 'PRICING_INDIVIDUAL' | translate }} - <b>{{ 'PRICING_EVERYDAY' | translate }}</b>
+          <li>
+            <div class="groupTour"></div> - {{ 'PRICING_GROUP' | translate }}</li>
+        </ul>
+        <div class="range range-sm-center range-30 range-sm-50">
+          <div class="col-md-12" id="dates"></div>
+        </div>
+
+      </section>
+
+      <section class="section-sm">
+        <div class="range range-sm-center range-30 range-sm-50">
+          <div class="cell-sm-11 cell-md-10 cell-lg-6">
+            <h4 class="heading-decorated" translate="PRICING_INCLUDES_HEADING"></h4>
+            <ul class="list-marked">
+              <li ng-repeat="service in priceIncludes">{{ service | translate }}</li>
+            </ul>
+          </div>
+          <div class="cell-sm-11 cell-md-10 cell-lg-6">
+            <h4 class="heading-decorated" translate="PRICING_ITINERARY_HEADING"></h4>
+            <ul class="list-marked">
+              <li ng-repeat="program in tourItinenary">{{ program | translate }}</li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="section-sm">
+        <h4 class="heading-decorated"></h4>
+        <ul class="list-marked">
+          <li ng-repeat="event in schedule">{{ event | translate }}</li>
+        </ul>
+      </section>
+
+    </div>
+</section>
+
+</body>
